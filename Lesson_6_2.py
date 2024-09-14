@@ -17,18 +17,17 @@ class Vehicle:
         return print("Цвет:", self.__color)
 
     def set_color(self, new_color):
-        if new_color.lower() in Sedan._Vehicle__COLOR_VARIANTS:
+        if new_color.lower() in Vehicle.__COLOR_VARIANTS:
             self.__color = new_color
             print(self.__color)
         else:
             print("Нельзя сменить цвет на", new_color)
 
-class Sedan(Vehicle):
-    __PASSENGERS_LIMIT = 5
-
     def print_info(self):
         return self.get_model(), self.get_horsepower(), self.get_color(), print("Владелец:", self.owner)
 
+class Sedan(Vehicle):
+    __PASSENGERS_LIMIT = 5
 
 
 # Текущие цвета __COLOR_VARIANTS = ['blue', 'red', 'green', 'black', 'white']
